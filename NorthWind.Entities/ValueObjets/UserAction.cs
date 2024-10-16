@@ -9,6 +9,6 @@ namespace NorthWind.Entities.ValueObjets;
 public class UserAction(string user, string description)
 {
     public DateTime CreatedDateTime { get; } = DateTime.Now;
-    public string user => user;
+    public string User => user;
     public string Description => description;
 }

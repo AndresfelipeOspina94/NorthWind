@@ -6,3 +6,4 @@ IUserActionWriter writer = default;
 
 AppLogger logger = new AppLogger(writer);
 logger.WriteLog("Application started.");
+
