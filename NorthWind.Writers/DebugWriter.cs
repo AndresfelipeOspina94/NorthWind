@@ -2,17 +2,18 @@
 using NorthWind.Entities.ValueObjets;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NorthWind.Writers;
 
-public class ConsoleWriter : IUserActionWriter
+public class DebugWriter : IUserActionWriter
 {
     public void Write(UserAction action)
     {
-        Console.WriteLine("ConsoleWriter: {0}, {1}, {2}",
+        Debug.WriteLine("ConsoleWriter: {0}, {1}, {2}",
             action.CreatedDateTime, action.User, action.Description);
     }
 }
