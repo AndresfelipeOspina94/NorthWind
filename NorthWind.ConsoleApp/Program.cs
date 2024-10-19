@@ -10,14 +10,13 @@ HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 
 Builder.Services.AddNorthWindServices();
 
-Builder.Services.AddSingleton<AppLogger>();
-Builder.Services.AddSingleton<ProductService>();
+
 using IHost AppHost = Builder.Build();
 
 
-AppLogger logger = AppHost.Services.GetRequiredService<AppLogger>();
+IAppLogger logger = AppHost.Services.GetRequiredService<IAppLogger>();
 logger.WriteLog("Application started.");
 
-ProductService Service = AppHost.Services.GetRequiredService <ProductService>();
+IProductService Service = AppHost.Services.GetRequiredService <IProductService>();
 Service.Add("Demo", "Azucar refinada");
 
